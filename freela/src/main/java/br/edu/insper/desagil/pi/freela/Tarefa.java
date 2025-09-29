@@ -32,12 +32,10 @@ public class Tarefa {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public void atualiza(Momento inicio,Momento fim){
-        Momento novoInicio=null;
-        Momento novoFim=null;
-        if(inicio.minutos()<fim.minutos()){
-            novoInicio=inicio;
-            novoFim=fim;
+    public void atualiza(Momento novoInicio,Momento novoFim){
+        if(novoInicio.minutos()<novoFim.minutos()){
+            inicio=novoInicio;
+            fim=novoInicio;
         }else{ throw new IllegalArgumentException("Tá errado");
         }
     }

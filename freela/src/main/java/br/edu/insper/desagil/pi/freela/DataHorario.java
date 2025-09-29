@@ -26,24 +26,22 @@ public class DataHorario extends Momento {
     public void setData(Data data) {
         this.data = data;
     }
-    public void atualiza(int hora, int minuto){
-        int novoMinuto=0;
-        int novaHora=0;
-        if(minuto<60 && minuto>=0){
-            novoMinuto=minuto;
+    public void atualiza(int novaHora, int novoMinuto){
+
+        if(novoMinuto<60 && novoMinuto>=0){
+            minuto=novoMinuto;
         }else{
-            novoMinuto=ajusta(minuto,59,0);
+            minuto=ajusta(novoMinuto,59,0);
         }
-        if(hora>=0 && hora<24){
-            novaHora=hora;
+        if(novaHora>=0 && novaHora<24){
+            hora=novaHora;
         }else{
-            novaHora=ajusta(hora,23,0);
+            hora=ajusta(novaHora,23,0);
         }
     }
     @Override
     public int minutos() {
-        int total=0;
-        total=hora*60+minuto;
+        int total=hora*60+minuto;
         return data.minutos()+total;
     }
 }

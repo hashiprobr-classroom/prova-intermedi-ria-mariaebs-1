@@ -39,24 +39,21 @@ public class Data extends Momento{
         return dia;
     }
 
-    public void atualiza(int ano, int mes, int dia){
-        int novoAno=0;
-        int novoMes=0;
-        int novoDia=0;
-        if(ano>1969 && ano<2071){
-            novoAno=ano;
+    public void atualiza(int novoAno, int novoMes, int novoDia){
+        if(novoAno>1969 && novoAno<2071){
+            ano=novoAno;
         }else{
-            novoAno=ajusta(ano,2070,1970);
+            ano=ajusta(novoAno,2070,1970);
         }
-        if(mes>0 && mes<13){
-            novoMes=mes;
+        if(novoMes>0 && novoMes<13){
+            mes=novoMes;
         }else{
-            novoMes=ajusta(mes,12,1);
+            mes=ajusta(novoMes,12,1);
         }
-        if(dia>0 && dia<limite.get(mes)){
-            novoDia=dia;
+        if(novoDia>0 && novoDia<=limite.get(novoMes)){
+            dia=novoDia;
         }else{
-            novoDia=ajusta(dia,limite.get(mes),1);
+            dia=ajusta(novoDia,limite.get(mes),1);
         }
     }
 
