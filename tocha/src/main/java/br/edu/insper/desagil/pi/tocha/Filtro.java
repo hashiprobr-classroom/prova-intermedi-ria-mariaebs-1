@@ -2,6 +2,7 @@ package br.edu.insper.desagil.pi.tocha;
 
 public class Filtro {
     private String tipo;
+    private static final double constante_media=0.111111;
 
     public Filtro(String tipo) {
         this.tipo = tipo;
@@ -28,15 +29,15 @@ public class Filtro {
             // inicializa kernel
 
             double[][] kernel = new double[3][3];
-            kernel[0][0] = 0.111111;
-            kernel[0][1] = 0.111111;
-            kernel[0][2] = 0.111111;
-            kernel[1][0] = 0.111111;
-            kernel[1][1] = 0.111111;
-            kernel[1][2] = 0.111111;
-            kernel[2][0] = 0.111111;
-            kernel[2][1] = 0.111111;
-            kernel[2][2] = 0.111111;
+            kernel[0][0] = constante_media;
+            kernel[0][1] = constante_media;
+            kernel[0][2] = constante_media;
+            kernel[1][0] = constante_media;
+            kernel[1][1] = constante_media;
+            kernel[1][2] = constante_media;
+            kernel[2][0] = constante_media;
+            kernel[2][1] = constante_media;
+            kernel[2][2] = constante_media;
 
             // calcula saída
 
